@@ -1,0 +1,41 @@
+<!--pages/minempdetails/minempdetails.wxml-->
+<!-- 列表 -->
+<view class="">
+<view class="cardse">
+  <image class="sign" src="/image/jiao_03.jpg"></image>
+  <view class="cardseimg"><image src="{{list.head_portrait}}"></image></view>
+  <view class="cardser">
+    <view class="cardsera">{{list.name}} <text> {{list.position}}</text></view>
+    <view class="cardserb"><image src="/image/tel.png"></image> <text> {{list.mobile}}</text></view>
+    <view class="cardserb"><image src="/image/dizhi.png"></image> <text> {{list.company_name}}</text></view>
+  </view>
+  <view class="intro">{{list.desc}}</view>
+  <view class="liang">
+    <view class="lianglist"><image class="sshoucimg" src="/image/k.png"></image> <text> {{list.clicks}}人看过</text></view>
+    <view class="lianglist"><image class="sshoucimg" src="/image/s.png"></image> <text> {{list.collect}}收藏</text></view>
+  </view>
+</view>
+<view class="conz"></view>
+<view class="listfe"> <view class="tit">QQ</view> <view class="conti">{{list.qq}}</view> <view class="fuzhi">复制</view></view>
+<view class="listfe"> <view class="tit">微信</view> <view class="conti">{{list.wechat}}</view> <view class="fuzhi">复制</view></view>
+<view class="listfe"> <view class="tit">邮箱</view> <view class="conti">{{list.email}}</view> <view class="fuzhi">复制</view></view>
+<view class="listfe"> <view class="tit">地区</view> <view class="conti">{{list.company_address}}</view> </view>
+<view class="listfe"> <view class="tit">行业</view> <view class="conti">{{list.company_business}}</view> </view>
+<view class="conz"></view>
+<view class="gsjj">公司简介</view>
+  <view class="title">{{listti.title}}</view>
+<view class="" wx:for="{{listti}}">
+
+      <image class="gsimg" mode="widthFix" src="https://card.xiaoniren.cn{{item.image}}"></image>
+</view>
+
+  <view class="content">{{listti.content}}</view>
+
+ <!-- <button class="btn_collect"  formType="submit" bindtap="make">加入收藏</button> -->
+
+<button class="btn_make" bindtap="zhifu">
+    点击制作
+</button>
+
+</view>
+

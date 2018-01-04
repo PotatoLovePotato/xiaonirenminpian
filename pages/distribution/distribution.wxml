@@ -1,0 +1,21 @@
+<!--pages/distribution/distribution.wxml-->
+<view class="distribution">
+  <view class="distributiontit">我的分销</view>
+  <view class="distributiongui">
+    <image class="kuai" src="/image/kuai.png"></image>
+    分销规则    
+  </view>
+  <view class="distcon">分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则分销规则</view> 
+</view>
+<view class="xian"></view>
+<view class="listfe"> 
+  <image class="listfelist" src="/image/1_10.jpg"></image>
+  <view class="tit">我的推荐人</view> 
+  <view class="conti">郭世杰</view>
+</view>
+<view class="listfe">
+  <image class="listfelist" src="/image/trl.png"></image>
+  <view class="tit">我下线人数</view>
+  <view class="conti">100 <text>人</text> </view>
+  <view class="fuzhi">></view>
+</view>

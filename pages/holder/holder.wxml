@@ -1,0 +1,43 @@
+<!--pages/holder/holder.wxml-->
+<view class="card">
+  <input bindinput="searchmp"  type="text" value="{{card}}" name="" placeholder="输入公司名称,姓名，业务,产品等" focus="{{focus}}"/>
+  <image class="card_img" src="/image/u118.png"></image>
+</view>
+<view class="personagec"></view>
+
+<!-- 列表 -->
+<view class="cardse" wx:for="{{search}}">
+  <navigator url="/pages/minempdetails/minempdetails?id={{item.id}}&type=DeliveryInfo">
+    <view class="cardseimg"><image src="{{item.head_portrait}}"></image></view>
+    <view class="cardser">
+      <view class="cardsera">{{item.name}} <text> {{item.position}}</text></view>
+      <view class="cardserb"><image src="/image/tel.png"></image> <text> {{item.mobile}}</text></view>
+      <view class="cardserb"><image src="/image/dizhi.png"></image> <text> {{item.company_name}}</text></view>
+    </view>
+    <view class="intro">{{item.desc}}</view>
+  </navigator>
+  <view class="liang">
+    <view class="lianglist"><image class="sshoucimg" src="/image/d_03.jpg"></image> <text> 标注重点</text></view>
+    <view class="lianglist"><image class="sshoucimg" src="/image/d_03-06.jpg"></image> <text> 加入收藏</text></view>
+  </view>
+</view>
+<!-- 公司 列表 -->
+<view class="cardse EnterpriseInfo " wx:for="{{gssearch}}">
+  <navigator url="/pages/firmminempdetails/firmminempdetails?id={{item.id}}&type=DeliveryInfo">
+    <view class="cardseimg"><image src="http://card.xiaoniren.cn{{item.logo}}"></image></view>
+    <view class="cardser">
+      <view class="cardsera">{{item.name}}</view>
+      <view class="cardsera">
+        <view class=""><image src="/image/name.png"></image><text>{{item.username}}</text></view>
+        <view class=""><image src="/image/2_03.jpg"></image><text>{{item.registered_capital}}</text></view>
+      </view>
+      <view class="cardserb cardserbb"><image src="/image/tel.png"></image> <text> {{item.phone}}</text></view>
+      <view class="cardserb cardserbb"><image src="/image/yewu.png"></image> <text> {{item.business}}</text></view>
+    </view>
+    <view class="intro">{{item.title}}</view>
+   <view class="liang">
+    <view class="lianglist"><image class="sshoucimg" src="/image/d_03.jpg"></image> <text> 标注重点</text></view>
+    <view class="lianglist"><image class="sshoucimg" src="/image/d_03-06.jpg"></image> <text> 加入收藏</text></view>
+  </view>
+  </navigator>
+</view>

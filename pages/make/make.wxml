@@ -1,0 +1,161 @@
+<!--pages/make/make.wxml-->
+<!-- 标题 -->
+<view class="make">
+  <view class="makelist {{selected?'red':'default'}}" bindtap="selected">个人名片</view>
+  <view class="makelist {{selected1?'red':'default'}}" bindtap="selected1">企业名片</view>
+</view>
+<!-- 个人 -->
+<view class="{{selected?'show':'hidden'}}">
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="personage">
+      <view class="personage_img"><image class="pe_img" src="{{userInfo}}"></image></view>
+      <view class="personage_in">
+        <input class="personage_i" name="name" value="{{name}}" bindinput="name" type="text"  placeholder="请输入真实姓名"/>
+        <input class="personage_i" name="mobile" value="{{mobile}}" bindinput="mobile"  type="text" placeholder="请输入手机号"/>
+      </view>
+      <view class="personagex">个人信息</view>
+    </view>
+    <view class="personagec"></view>  
+    <view class="personagegs">
+      <view class="personage_gs"><text>简介</text><input bindinput="desc"  type="text" value="{{desc}}" name="desc" placeholder="视力矫正"/></view>
+      <view class="personage_gs"><text>职位</text><input  type="text" bindinput="position" value="{{position}}" name="position" placeholder="职位"/></view>
+      <view class="geren {{open?'display_show':'display_none'}}">
+        <view class="personage_gs"><text>微信号</text><input  type="text" bindinput="wechat" value="{{wechat}}" name="wechat" placeholder="微信号"/></view>
+        <view class="personage_gs"><text>邮箱</text><input  type="text" bindinput="email" value="{{email}}" name="email" placeholder="邮箱"/></view>
+        <view class="personage_gs"><text>个人主页</text><input  type="text" bindinput="website" value="{{website}}" name="website" placeholder="个人主页"/></view>
+        <view class="personage_gs"><text>QQ</text><input  type="number" bindinput="qq" value="{{qq}}" name="qq" placeholder="QQ"/></view>
+      </view>
+      <view class="personage_mo" bindtap="showitem">填写更多信息 展开 +</view>
+    </view>
+    <view class="personagec"></view> 
+    <view class="personagex">公司信息</view>
+    <view class="personagec"></view> 
+    <view class="personagegs">
+      <view class="personage_gs"><text>公司名称</text><input  type="text" bindinput="company_name" value="{{company_name}}" name="company_name" placeholder="公司名称"/></view>  
+      <view class="personage_gs"><text>行业</text><input  type="text" bindinput="company_business" value="{{company_business}}" name="company_business" placeholder="行业"/></view>  
+      <view class="personage_gs"><text>详细地址</text><input  type="text" bindinput="company_address" value="{{company_address}}" name="company_address" placeholder="详细地址"/></view>      
+      <view class="geren {{opene?'display_showw':'display_nonee'}}">     
+        <!-- <view class="personage_gs"><text>地区</text>
+          <picker id="{{brands[brandindex].id}}"  bindchange="bindPickerChange0" anme="{{brandindex}}" value="{{brandindex}}" range="{{brands}}" range-key="{{'name'}}">  
+            <view class="picker">  
+              {{brands[brandindex].name}}
+            </view>  
+          </picker>
+          <picker bindchange="bindPickerChange1" name="{{index1}}" value="{{index1}}" range="{{object}}" range-key="{{'name'}}">  
+            <view class="picker">  
+              {{object[index1].name}}
+            </view>  
+          </picker> 
+        </view> -->
+      </view>
+      <view class="personage_mo" bindtap="showitemm">填写更多信息 展开 +</view>
+    </view>
+    <view class="personagec"></view> 
+    <view class="personagex">更多介绍</view>
+    <view class="personagec"></view> 
+    <view class="">
+      <view class="tianjia"><image bindtap="updateLicence" src="/image/_03.jpg"></image></view>
+      <block wx:for="{{picArr0}}">
+        <image data-src="{{item}}" src="https://card.xiaoniren.cn{{item}}" style="width: 100px;height:100px;" />   
+      </block>
+      <view class="Delimg" wx:for="{{image}}">
+        <image bindtap="imgdel" class="delimg" data-id="{{item.id}}" data-index="{{index}}" src="/image/del.png"></image>
+        <image class="img" data-id="{{item.id}}" data-src="{{item.image}}" src="https://card.xiaoniren.cn{{item.image}}" style="width: 80%;height:100px;" />           
+      </view>      
+      <view class="beizhu">添加公司介绍、产品介绍、团队介绍、客户案例等(可添加多个)</view>
+      <view class="personagegs">
+        <view class="personage_gs"><text>标题</text><input  type="text" value="{{title}}" name="title" placeholder="视力矫正"/></view>
+        <view class="personage_gs"><text>介绍</text><input  type="text" value="{{content}}" name="content" placeholder="北京海淀"/></view>
+      </view>
+    </view>
+    <button class="btn_login"  formType="submit">完成</button>
+    </form>
+  </view>
+
+
+
+<!-- 公司 -->
+<view class="{{selected1?'show':'hidden'}}">
+  <form bindsubmit="firmformSubmit" bindreset="formReset">
+    <view class="personage">
+      <view class="personage_img">
+        <image  class="pe_img" data-src="{{logo}}" bindtap="updateLogo" src="{{logo.length==0?'/image/logo.png':('https://card.xiaoniren.cn'+logo)}}"></image>
+      </view>
+      <view class="personage_in">
+        <input class="personage_is" type="text" value="{{name}}" name="name" bindinput="name" placeholder="请输入公司全名"/>
+        <input class="personage_is" name="username" value="{{username}}" bindinput="username" placeholder="请输入法人姓名"/>
+        <input class="personage_is" name="phone" value="{{phone}}" bindinput="phone" placeholder="请输入公司电话"/>
+      </view>
+      <view class="personagex">个人信息</view>
+    </view>
+    <view class="personagec"></view>
+    <view class="personagegs">
+      <view class="personage_gs"><text>主营</text><input  type="text" bindinput="business" value="{{business}}" name="business" placeholder="主营"/></view>
+      <!-- <view class="personage_gs"><text>地区</text><input  type="text" bindinput="business" value="{{business}}" name="business" placeholder="地区"/></view> -->
+      <view class="personage_gs"><text>行业</text><input  type="text" bindinput="company_business" value="{{company_business}}" name="company_business" placeholder="行业"/></view>
+      <view class="geren {{openeg?'display_showg':'display_noneg'}}">    
+        <view class="personage_gs"><text>城市</text><input  type="text" bindinput="company_city_id" value="北京" name="company_city_id" placeholder="城市"/></view> 
+        <view class="personage_gs"><text>详细地址</text><input  type="text" bindinput="company_address" value="{{company_address}}" name="company_address" placeholder="详细地址"/></view> 
+        <view class="personage_gs"><text>成立时间</text>
+          <picker mode="date"  name="company_created_at" value="{{company_created_at}}" start="2015-09-01" end="2017-09-01" bindinput="company_created_at" bindchange="company_created_at"> 
+            <view class="picker"> 
+            {{date}} 
+            </view> 
+          </picker> 
+        </view>
+        <view class="personage_gs"><text>公司规模</text> 
+        <picker mode="selector" range="{{array}}" value="{{index}}" 
+          name="{{array[index]}}" bindinput="company_scale" bindchange="listenerPickerSelected">
+            <view class="picker"> {{array[index]}}</view> 
+        </picker>  
+        </view>
+        <view class="personage_gs"><text>注册资本</text>
+          <input  type="number" bindinput="registered_capital" value="{{registered_capital}}" name="registered_capital" placeholder="万人民币"/>
+        </view>
+        <view class="personage_gs"><text>融资情况</text>
+         <picker mode="selector" range="{{renminbi}}" value="{{index1}}" 
+          name="{{renminbi[index1]}}" bindinput="financing_situation" bindchange="listenerPickerSelectedd">
+            <view class="picker"> {{renminbi[index1]}}</view> 
+        </picker> 
+        </view>
+      </view>
+      <view class="personage_mo" bindtap="showitemg">填写更多信息 展开 +</view>
+    </view>
+    <view class="personagec"></view>
+    <view class="personagex">资质信息</view>
+    <view class="personagec"></view>
+    <view class="zizhi">
+      <view class="zizhia">
+        <image class="{{liopen?'liopen_none':'liopen_show'}}" src="/image/z_03.jpg"  bindtap="license" ></image>
+        <image class="{{liopen?'liopen_show':'liopen_none'}}" data-src="{{license}}" src="https://card.xiaoniren.cn{{license}}"></image>
+      </view>
+      <view class="zizhib">
+        <view class="">
+          <image class="{{conopen?'conopen_show':'conopen_none'}}" src="/image/z_05.jpg" bindtap="positive"></image>
+          <image class="{{conopen?'conopen_none':'conopen_show'}}" data-src="{{positive}}" src="https://card.xiaoniren.cn{{positive}}"></image>
+        </view>
+        <view class="">
+          <image class="{{ryopen?'ryopen_show':'ryopen_none'}}" src="/image/z_07.jpg" bindtap="contrary"></image>
+          <image class="{{ryopen?'ryopen_none':'ryopen_show'}}" data-src="{{contrary}}" src="https://card.xiaoniren.cn{{contrary}}"></image>
+        </view>
+      </view>
+    </view>  
+    <view class="personagec"></view> 
+    <view class="personagex">公司信息</view>
+    <view class="personagec"></view> 
+    <view class="">
+      <view class="tianjia"><image bindtap="gsupdateLicence" src="/image/_03.jpg"></image></view>
+      <block wx:for="{{picArr}}">
+      <image data-src="{{item}}" src="https://card.xiaoniren.cn{{item}}" style="width: 100px;height:100px;" />   
+      </block>
+      <view class="beizhu">添加公司介绍、产品介绍、团队介绍、客户案例等(可添加多个)</view>
+      <view class="personagegs">
+        <view class="personage_gs"><text>标题</text><input  type="text" value="{{title}}" name="title" placeholder="视力矫正"/></view>
+        <view class="personage_gs"><text>介绍</text><input  type="text" value="{{content}}" name="content" placeholder="北京海淀"/></view>
+      </view>
+    </view>
+    <button class="btn_login" formType="submit">完成</button>
+  </form>
+</view>
+
+

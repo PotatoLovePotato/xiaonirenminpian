@@ -1,0 +1,82 @@
+/* pages/make/make.wxss */
+.make{width: 100%;height: auto;border-bottom:1px solid #9f9f9f;line-height: 34px;overflow: hidden;}
+.makelist{float: left;width: 50%;text-align: center;font-size: 16px;color: #343434;
+line-height: 34px; }
+.red{flex:1;border-bottom:2px solid #1a79f9;line-height: 34px;height: 35px;}
+.show{display:block;}
+.hidden{display:none;}
+/* 个人 */
+.personage{width: 92%;margin-left: 4%;margin-top: 20px;overflow: hidden;}
+.personage_img{width: 32%;float: left;}
+.pe_img{width: 100%;height: 113px;}
+.personage_in{width: 60%;float: right; }
+.personage_i{border-bottom:1px solid #9f9f9f; height: 50px;font-size: 14px;color: #a0a0a0;}
+.personagex{width: 100%;line-height: 50px;float: left;text-align: center;font-weight: bold;
+font-size: 18px;}
+.personagec{width: 100%;height: 9px;background: #f1f1f1;float: left;}
+.personagegs{width: 100%;}
+.personagegs text{float: left;margin-left: 4%;margin-right: 4%;font-size: 14px;color: #0d0d0d;
+width: 18%;text-align: right;}
+.personage_gs{width: 100%;height: auto;overflow: hidden;line-height: 50px;
+border-bottom:1px solid #f1f1f1;}
+.personage_gs input{height: 50px;font-size: 14px;color: #a0a0a0;text-align: center;width: 70%;}
+.personage_mo{font-size: 14px;color: #a0a0a0;width: 100%;height: auto;overflow: hidden;
+line-height: 50px;text-align: center;}
+.display_show{
+    display: block;
+}
+.display_none{
+    display: none;
+}
+
+.liopen_show{
+    display: block;
+}
+.liopen_none{
+    display: none;
+}
+
+.ryopen_show{
+    display: block;
+}
+.ryopen_none{
+    display: none;
+}
+
+.conopen_show{
+    display: block;
+}
+.conopen_none{
+    display: none;
+}
+
+
+.display_showw{
+    display: block;
+}
+.display_nonee{
+    display: none;
+}
+.display_showg{
+    display: block;
+}
+.display_noneg{
+    display: none;
+}
+.tianjia{width: 100%;height: auto;text-align: center;}
+.tianjia image{width: 100px;height: 100px;margin-top: 20px;}
+.beizhu{width: 100%;height: auto;color: #9f9f9f;font-size: 12px;margin-top: 18px;
+text-align: center;float: left;}
+.btn_login{width: 92%;background: #108df9;color: #fff;margin-top: 40px;margin-bottom: 40px;}
+.personage_is{border-bottom:1px solid #9f9f9f; height: 38px;font-size: 14px;color: #a0a0a0;}
+picker{float: right;width:64%;margin-top: 7px;}
+.picker{line-height: 2rem;font-size: 14px;color: #a0a0a0;}
+.zizhi{width: 92%;height: auto;margin-left: 4%;padding-top: 15px;float: left;padding-bottom: 20px;}
+.zizhia{width: 48%;float: left;}
+.zizhia image{width: 100%;}
+.zizhib{width: 48%;float: right;}
+.zizhib image{width: 100%;height: 118px;}
+.gepersonage{width: 100px;height: 100px;}
+.delimg{width: 20px;height: 20px;position: absolute;top: 0%;right: 10%;z-index: 100;}
+.Delimg{position: relative;width: 33.33%;float: left;text-align: center;}
+.Delimg .img{width: 100%;}
